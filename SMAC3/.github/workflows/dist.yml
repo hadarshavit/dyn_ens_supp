@@ -1,0 +1,52 @@
+name: dist
+
+on:
+  # Manual trigger option in GitHub
+  workflow_dispatch:
+
+  # Trigger on push to these branches
+  push:
+    branches:
+      - main
+      - development
+
+  # Trigger on open/push to a PR targeting one of these branches
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+    branches:
+      - main
+      - development
+
+jobs:
+  dist:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Build dist
+      run: |
+        python setup.py sdist
+
+    - name: Twine check
+      run: |
+        pip install twine
+        last_dist=$(ls -t dist/smac-*.tar.gz | head -n 1)
+        twine_output=`twine check "$last_dist"`
+        if [[ "$twine_output" != "Checking $last_dist: PASSED" ]]
+        then
+          echo $twine_output
+        else
+          pip install $last_dist
+        fi
