@@ -25,4 +25,4 @@ The jahs subdirectory contains figures for JAHS, and yahpo for YAHPO.
 
 The co subdirectory contains cnvergence plots aggregated over 51 seeds, weights contains the weights of the ensembles aggregated over 51 seeds.
 
-Convergence plots that end with _smac are for the SMAC results, the others are for HEBO.# dyn_ens_supp
+Convergence plots that end with _smac are for the SMAC results, the others are for HEBO.# 
