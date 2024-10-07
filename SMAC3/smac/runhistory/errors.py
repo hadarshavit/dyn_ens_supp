@@ -1,2 +1,0 @@
-class NotEvaluatedError(RuntimeError):
-    pass

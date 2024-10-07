@@ -10,13 +10,6 @@ We used python 3.11 for the experiments with YAHPO and 3.10 for JAHS.
 
 The source code for the ensemble is in `HEBO/hebo/models/ensemble/ensemble.py`
 
-##  SMAC
-To use our method with SMAC import `from smac.model.ensemble import Ensemble` in and set `model=Ensemble(scenario, alpha)`.
-
-The code to run our experiments is available at `yahpo_smac.py` and is based on the submitit package.
-We used python 3.11 for the experiments.
-
-The source code for the ensemble is in `SMAC3/smac/model/ensemble.py`
 
 ## Additional figures
 In the figs directory there are additional figures.
