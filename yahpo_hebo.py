@@ -206,7 +206,7 @@ def run(scenario, instance, seed, surrogate_model):
 
 if __name__ == "__main__":
     executor = submitit.AutoExecutor('logd', 'slurm')
-    executor.update_parameters(timeout_min=60*48, slurm_partition="CLUSTER", slurm_array_parallelism=1024, cpus_per_task=1, mem_gb=14, slurm_additional_parameters={'exclude': 'kathleencpu[17]'}, job_name='YAHPO')
+    executor.update_parameters(timeout_min=60*48, slurm_partition="CLUSTER", slurm_array_parallelism=1024, cpus_per_task=1, mem_gb=14, job_name='YAHPO')
 
     for scenario in list_scenarios(): 
         with executor.batch():
