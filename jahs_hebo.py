@@ -175,7 +175,7 @@ def run(dataset , seed, surrogate_model):
 
 if __name__ == "__main__":
     executor = submitit.AutoExecutor('log', 'slurm')
-    executor.update_parameters(timeout_min=60 * 48, slurm_partition="Kathleen", slurm_array_parallelism=1024, cpus_per_task=1, mem_gb=14, job_name='JAHS')
+    executor.update_parameters(timeout_min=60 * 48, slurm_partition="CLUSTER", slurm_array_parallelism=1024, cpus_per_task=1, mem_gb=14, job_name='JAHS')
 
     with executor.batch():
         for dataset in ['cifar10', 'colorectal_histology', 'fashion_mnist']:
