@@ -1,6 +1,6 @@
 # Dynamic Ensembling of Surrogate Models for Hyperparameter Optimisation
 
-This directory contains the source code for the paper "DensBO: Dynamic Ensembling of Surrogate Models for Hyperparameter Optimisation" submitted to ICLR 2025. This is an anonymised repository.
+This directory contains the source code for the paper "DyMBO: Dynamic Mixture of Surrogate Models for Hyperparameter Optimisation" submitted to ICML 2025. This is an anonymised repository.
 
 ## HEBO
 To use our method with HEBO, simply set `model_name='ens'` in the HEBO constructor. To set the $\alpha$ value, also set the `model_config=dict(alpha=0.9)`.
@@ -16,10 +16,6 @@ In the figs directory there are additional figures.
 
 The jahs subdirectory contains figures for JAHS, and yahpo for YAHPO.
 
-The co subdirectory contains cnvergence plots aggregated over 51 seeds, weights contains the weights of the ensembles aggregated over 51 seeds.
+The co subdirectory contains cnvergence plots aggregated over 51 seeds.
 
-Convergence plots that end with _smac are for the SMAC results, the others are for HEBO.
 
-main_paper_time_budget contains figures with budget as 100xmean eval time.
-256 evals contains figures for evaluation budget of 256 evaluations.
-1024 evals contains figures for evaluation budget of 1024 evaluations.

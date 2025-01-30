@@ -56,7 +56,7 @@ class SingleObjectiveAcq(Acquisition):
 class LCB(SingleObjectiveAcq):
     def __init__(self, model : BaseModel, **conf):
         super().__init__(model, **conf)
-        self.kappa = conf.get('kappa', 3.0)
+        self.kappa = conf.get('kappa', 2.0)
         assert(model.num_out == 1)
     
     def eval(self, x : Tensor, xe : Tensor) -> Tensor:
@@ -82,7 +82,40 @@ class Sigma(SingleObjectiveAcq):
         return -1 * ps2.sqrt()
 
 class EI(SingleObjectiveAcq):
-    pass
+    def __init__(self, model : BaseModel, best_y, **conf):
+        super().__init__(model, **conf)
+        self.eps   = conf.get('eps', 1e-4)
+        self.tau   = best_y
+        assert(model.num_out == 1)
+    
+    def eval(self, x : Tensor, xe : Tensor) -> Tensor:
+        with torch.no_grad():
+            py, ps2   = self.model.predict(x, xe)
+            ps        = ps2.sqrt().clamp(min = torch.finfo(ps2.dtype).eps)
+            normed    = ((self.tau - self.eps - py) / ps)
+            dist      = Normal(0., 1.)
+            log_phi   = dist.log_prob(normed)
+            Phi       = dist.cdf(normed)
+            EI        = ps * (Phi * normed +  log_phi.exp())
+            return - EI
+
+
+class PI(SingleObjectiveAcq):
+    def __init__(self, model : BaseModel, best_y, **conf):
+        super().__init__(model, **conf)
+        self.eps   = conf.get('eps', 1e-4)
+        self.tau   = best_y
+        assert(model.num_out == 1)
+    
+    def eval(self, x : Tensor, xe : Tensor) -> Tensor:
+        with torch.no_grad():
+            py, ps2   = self.model.predict(x, xe)
+            ps        = ps2.sqrt().clamp(min = torch.finfo(ps2.dtype).eps)
+            normed    = ((self.tau - self.eps - py) / ps)
+            dist      = Normal(0., 1.)
+            Phi       = dist.cdf(normed)
+            PI        = Phi
+            return - PI
 
 class logEI(SingleObjectiveAcq):
     pass
