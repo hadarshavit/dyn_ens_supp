@@ -3,6 +3,8 @@
 This directory contains the source code for the paper "DyMBO: Dynamic Mixture of Surrogate Models for Hyperparameter Optimisation" submitted to ICML 2025. This is an anonymised repository.
 
 ## DyMBO
+In the DyMBO directory there is the source code of DyMBO, based on the HEBO package.
+
 To use DyMBO implemented within the HEBO framework, simply set `model_name='ens'` in the HEBO constructor. To set the $\alpha$ value, also set the `model_config=dict(alpha=0.9)`.
 
 The code to run our experiments is available at `yahpo_hebo.py` and `jahs_hebo.py` and is based on the submitit package.
