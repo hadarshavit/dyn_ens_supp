@@ -72,14 +72,14 @@ class AdaptiveWeightModel(BaseModel):
                     weights.append(1)
                 else:
                     weights.append(0)
-        if self.conf.get('use_et', True):
+        if self.conf.get('use_et', False):
             self.models_classes.append(partial(ET, conf=dict(n_estimators=10)))
             if initialising:
                 if self.conf.get('init_et', True):
                     weights.append(1)
                 else:
                     weights.append(0)
-        if self.conf.get('use_gb', True):
+        if self.conf.get('use_gb', False):
             self.models_classes.append(partial(GB, conf=dict(n_estimators=10)))
             if initialising:
                 if self.conf.get('init_gb', True):
@@ -95,7 +95,7 @@ class AdaptiveWeightModel(BaseModel):
                                                                 'pred_likeli'  : False
                                                                 }))
             if initialising:
-                if self.conf.get('init_gp', True):
+                if self.conf.get('init_gp', False):
                     weights.append(1)
                 else:
                     weights.append(0)
@@ -108,9 +108,9 @@ class AdaptiveWeightModel(BaseModel):
         self.prevX = None
         self.prevY = None
         self.mse_weights = False
-        self.evaluate_all = self.conf.get('evaluate_all', False)
+        self.evaluate_all = self.conf.get('evaluate_all', True)
         self.use_total_variance = self.conf.get('use_total_variance', False)
-        self.use_ranking_loss = self.conf.get('use_ranking_loss', False)
+        self.use_ranking_loss = self.conf.get('use_ranking_loss', True)
         self.est_noise = torch.zeros(self.num_out)
         self.conf = conf
         
