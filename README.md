@@ -31,6 +31,7 @@ On y-axis: weight value in [0, 1], smoothed over 51 seeds.
 Please note that in the folder `figs/weights` there are such plots for all DyMBO variants for different alpha values on different benchmarks. For all plots, we use a default weight initialisation scheme with the initial value of 1 assigned to RF and 0 to GP.
 
 Paths to figures (glmnet benchmark [Binder et al., 2020], dataset ID 1067): 
+
 alpha = 0.1: [`figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf01_eval_all.png`](https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf01_eval_all.png)
 
 alpha = 0.5: [`figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf05_eval_all.png`](https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf05_eval_all.png)
