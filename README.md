@@ -44,6 +44,7 @@ For alpha = 0.5, we see a similar overall trend, with a larger number of sharp s
 For alpha = 0.9, we heavily rely on the newly assigned weights while putting less emphasis on the historical accuracy, and we see more frequent changes (sharp spikes), reflecting the fact that at each iteration ranking loss of surrogates (which itself determines the newly assigned weights) can drastically change.
 
 Paths to figures (NAS Bench 301 [Zela et al., 2022]):
+
 alpha = 0.1: [`figs/weights/w_2d_init_snb301iCIFAR10_smens_ranking_loss_rf_gp_init_orf01_eval_all.png`](https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_snb301iCIFAR10_smens_ranking_loss_rf_gp_init_orf01_eval_all.png)
 
 alpha = 0.5: [`figs/weights/w_2d_init_snb301iCIFAR10_smens_ranking_loss_rf_gp_init_orf05_eval_all.png`](https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_snb301iCIFAR10_smens_ranking_loss_rf_gp_init_orf05_eval_all.png)
