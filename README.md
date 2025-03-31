@@ -32,8 +32,8 @@ Please note that in the folder `figs/weights` there are such plots for all DyMBO
 
 Paths to figures (glmnet benchmark [Binder et al., 2020], dataset ID 1067): 
 alpha = 0.1: [`figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf01_eval_all.png`](https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf01_eval_all.png)
-alpha = 0.5: [`figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf05_eval_all.png`]((https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf05_eval_all.png)
-alpha = 0.9: [`figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf09_eval_all.png`]((https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf09_eval_all.png)
+alpha = 0.5: [`figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf05_eval_all.png`](https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf05_eval_all.png)
+alpha = 0.9: [`figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf09_eval_all.png`](https://anonymous.4open.science/r/dyn_ens_supp-D5C2/figs/weights/w_2d_init_siaml_glmneti1067_smens_ranking_loss_rf_gp_init_orf09_eval_all.png)
 
 Caption: In all three plots, we see that the weight assignment shifts immediately to GP in the very beginning of the optimisation, suggesting that here GP might better approximate the target function. However, this trend changes over the course of optimisation, and this changes varies according to different value of alpha used. 
 For alpha = 0.1, we heavily rely on the historical accuracy and put less emphasis on the newly assigned weights, resulting in smoother curves with a single drastic change at around 50% of the budget, where we shift from predominantly using GP to RF (in a symetric fashion).
