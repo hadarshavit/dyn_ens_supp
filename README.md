@@ -1,7 +1,7 @@
 
 # DyMBO: Dynamic Mixture of Surrogate Models for Hyperparameter Optimisation
 
-This directory contains the source code for the paper "DyMBO: Dynamic Mixture of Surrogate Models for Hyperparameter Optimisation" submitted to ICML 2025. This is an anonymised repository.
+This directory contains the source code for the paper "DyMBO: Dynamic Mixture of Surrogate Models for Hyperparameter Optimisation" submitted to JMLR. This is an anonymised repository.
 
 ## DyMBO
 In the DyMBO directory there is the source code of DyMBO, based on the HEBO package.
